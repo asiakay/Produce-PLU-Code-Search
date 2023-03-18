@@ -51,9 +51,10 @@ function App() {
 
   return (
     <div className="App">
+      <main>
       <h1>Produce PLU Code Search</h1>
-<section className='search-area'>
-
+<section className='search-area' role="search">
+<div className='input-container'>
   <label htmlFor='produce-search'>Search for produce item by name</label>
       <input
         type="text"
@@ -68,6 +69,7 @@ function App() {
           }
         }
       />
+      </div>
       <button 
       type="submit"
       onClick={handleSearch} 
@@ -76,21 +78,28 @@ function App() {
         <FontAwesomeIcon icon={faSearch} />
       </button>
       </section>
+      <section>
       <ul className='suggestions-list'>
         {suggestions.map((suggestion) => (
           <li
           key={suggestion.plu}
+          tabIndex="0"
           onClick={() => handleSuggestionClick(suggestion.item, suggestion.plu)}
           >
             {suggestion.item}
           </li>
         ))}
       </ul>
-      <p className={pluCode ? 'plu-result' : ''}>
+      <p 
+      className={pluCode ? 'plu-result' : ''}
+      aria-live='polite'>
         {pluCode ? `PLU Code: ${pluCode}` : ''}
         </p>
 {/*   {pluCode && <div>PLU Code: {pluCode}</div>}
- */}    </div>
+ */}   
+ </section> 
+ </main>
+ </div>
     
   );
 }
