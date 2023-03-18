@@ -52,9 +52,12 @@ function App() {
   return (
     <div className="App">
       <h1>Produce PLU Code Search</h1>
-<div className='search-area'>
+<section className='search-area'>
+
+  <label htmlFor='produce-search'>Search for produce item by name</label>
       <input
         type="text"
+        id="produce-search"
         placeholder="Enter produce item"
         value={searchTerm}
         onChange={(e) => {
@@ -66,11 +69,13 @@ function App() {
         }
       />
       <button 
+      type="submit"
       onClick={handleSearch} 
-      className="search-icon-button">
+      className="search-icon-button"
+      aria-label='Search'>
         <FontAwesomeIcon icon={faSearch} />
       </button>
-      </div>
+      </section>
       <ul className='suggestions-list'>
         {suggestions.map((suggestion) => (
           <li
