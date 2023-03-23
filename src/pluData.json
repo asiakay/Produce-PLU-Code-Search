@@ -1,56 +1,339 @@
 [
-  { "item": "apple", "plu": "4011" },
-  { "item": "banana", "plu": "4012" },
-  { "item": "orange", "plu": "4013" },
-  { "item": "kiwi", "plu": "4030" },
-  { "item": "grapefruit", "plu": "4027" },
-  { "item": "lemon", "plu": "4053" },
-  { "item": "lime", "plu": "4048" },
-  { "item": "peach", "plu": "4044" },
-  { "item": "nectarine", "plu": "4378" },
-  { "item": "plum", "plu": "4040" },
-  { "item": "mango", "plu": "4051" },
-  { "item": "papaya", "plu": "3111" },
-  { "item": "pineapple", "plu": "4029" },
-  { "item": "watermelon", "plu": "4032" },
-  { "item": "cantaloupe", "plu": "4050" },
-  { "item": "honeydew melon", "plu": "4034" },
-  { "item": "broccoli", "plu": "4060" },
-  { "item": "cauliflower", "plu": "4079" },
-  { "item": "cabbage_green", "plu": "4069" },
-  { "item": "cabbage_red", "plu": "4071" },
-  { "item": "lettuce_iceberg", "plu": "4061" },
-  { "item": "lettuce_romaine", "plu": "4093" },
-  { "item": "spinach", "plu": "4090" },
-  { "item": "kale", "plu": "4627" },
-  { "item": "cucumber", "plu": "4062" },
-  { "item": "bell_pepper_green", "plu": "4065" },
-  { "item": "bell_pepper_red", "plu": "4088" },
-  { "item": "bell_pepper_yellow", "plu": "4689" },
-  { "item": "carrot", "plu": "4562" },
-  { "item": "celery", "plu": "4070" },
-  { "item": "onion_yellow", "plu": "4093" },
-  { "item": "onion_red", "plu": "4082" },
-  { "item": "potato_russet", "plu": "4072" },
-  { "item": "potato_red", "plu": "4073" },
-  { "item": "potato_white", "plu": "4663" },
-  { "item": "sweet_potato", "plu": "4091" },
-  { "item": "tomato", "plu": "4017" },
-  { "item": "cherry_tomato", "plu": "4087" },
-  { "item": "avocado", "plu": "4225" },
-  { "item": "asparagus", "plu": "4080" },
-  { "item": "zucchini", "plu": "4067" },
-  { "item": "yellow_squash", "plu": "4783" },
-  { "item": "eggplant", "plu": "4081" },
-  { "item": "green_bean", "plu": "4066" },
-  { "item": "snow_pea", "plu": "4076" },
-  { "item": "sugar_snap_pea", "plu": "4078" },
-  { "item": "mushroom_white", "plu": "4642" },
-  { "item": "mushroom_portobello", "plu": "4693" },
-  { "item": "corn", "plu": "4078" },
-  { "item": "artichoke", "plu": "4084" },
-  { "item": "radish", "plu": "4095" },
-  { "item": "beet", "plu": "4091" },
-  { "item": "turnip", "plu": "4733" },
-  { "item": "rutabaga", "plu": "4703" }
+  { "item": "banana", "plu": "4011" },
+  { "item": "broccoli", "plu": "4567" },
+  { "item": "cilantro", "plu": "4889" },
+  { "item": "yellow onion", "plu": "4665" },
+  { "item": "Avocado", "plu": "4225" },
+  { "item": "Onion Shallots", "plu": "4662" },
+  { "item": "Onions Sweet", "plu": "4166" },
+  { "item": "Onion Vidalia", "plu": "4159" },
+  { "item": "Onion White", "plu": "4663" },
+  { "item": "Onion White Pearl", "plu": "4660" },
+  { "item": "Onion Yellow", "plu": "4665" },
+  { "item": "Orange Fla Navel", "plu": "4385" },
+  { "item": "Orange Juice", "plu": "4382" },
+  { "item": "Orange Navel", "plu": "4012" },
+  { "item": "Orange Sour", "plu": "3109" },
+  { "item": "Organic Apple Pink Lady", "plu": "94128" },
+  { "item": "Organic Avocado", "plu": "94225" },
+  { "item": "Organic Beets", "plu": "94539" },
+  { "item": "Organic Boston Lett", "plu": "94632" },
+  { "item": "Organic Braeburn App", "plu": "94103" },
+  { "item": "Organic Broccoli", "plu": "94567" },
+  { "item": "Organic Bunched Radish", "plu": "94089" },
+  { "item": "Organic Carrots Bunch", "plu": "94094" },
+  { "item": "Organic Cauliflower", "plu": "94079" },
+  { "item": "Organic Collard", "plu": "94614" },
+  {
+    "item": "Onion Yellow",
+    "plu": 4665
+  },
+  {
+    "item": "Orange Fla Navel",
+    "plu": 4385
+  },
+  {
+    "item": "Orange Juice",
+    "plu": 4382
+  },
+  {
+    "item": "Orange Navel",
+    "plu": 4012
+  },
+  {
+    "item": "Orange Sour",
+    "plu": 3109
+  },
+  {
+    "item": "Organic Apple Pink Lady",
+    "plu": 94128
+  },
+  {
+    "item": "Organic Avocado",
+    "plu": 94225
+  },
+  {
+    "item": "Pepper Green",
+    "plu": 4065
+  },
+  {
+    "item": "Pepper Orange",
+    "plu": 3121
+  },
+  {
+    "item": "Pepper Poblano",
+    "plu": 4705
+  },
+  {
+    "item": "Pepper Red",
+    "plu": 4688
+  },
+  {
+    "item": "Pepper Red La Rouge",
+    "plu": 94587
+  },
+  {
+    "item": "Pepper Yellow",
+    "plu": 4689
+  },
+  {
+    "item": "Persimmon Fuyu",
+    "plu": 4428
+  },
+  {
+    "item": "Persimmon Hachiya",
+    "plu": 94090
+  },
+  {
+    "item": "Pie Pumpkin",
+    "plu": 3134
+  },
+  {
+    "item": "Pineapple Lg",
+    "plu": 4430
+  },
+  {
+    "item": "Plantains",
+    "plu": 4235
+  },
+  {
+    "item": "Plums Black",
+    "plu": 4437
+  },
+  {
+    "item": "Plums Green",
+    "plu": 4435
+  },
+  {
+    "item": "Plums Prune",
+    "plu": 4436
+  },
+  {
+    "item": "Plums Red",
+    "plu": 4042
+  },
+  {
+    "item": "Pomegranate",
+    "plu": 3127
+  },
+  {
+    "item": "Potato Red",
+    "plu": 4073
+  },
+  {
+    "item": "Potato Russet Loose",
+    "plu": 4072
+  },
+  {
+    "item": "Potato Sweet",
+    "plu": 4091
+  },
+  {
+    "item": "Potato White",
+    "plu": 4083
+  },
+  {
+    "item": "Potato Yellow",
+    "plu": 4727
+  },
+  {
+    "item": "Pumpkin Large",
+    "plu": 4736
+  },
+  {
+    "item": "Pumpkin Mini",
+    "plu": 4734
+  },
+  {
+    "item": "Pumpkin Pie",
+    "plu": 3134
+  },
+  {
+    "item": "Quenepas",
+    "plu": 4483
+  },
+  {
+    "item": "Quince",
+    "plu": 4447
+  },
+  {
+    "item": "Radicchio",
+    "plu": 4738
+  },
+  {
+    "item": "Radish Black",
+    "plu": 4739
+  },
+  {
+    "item": "Radish Breakfast",
+    "plu": 2178
+  },
+  {
+    "item": "Radish Daikon",
+    "plu": 4598
+  },
+  {
+    "item": "Radish Icicle",
+    "plu": 2179
+  },
+  {
+    "item": "Radish Organic",
+    "plu": 94089
+  },
+  {
+    "item": "Radish Red",
+    "plu": 4089
+  },
+  {
+    "item": "Rutabaga",
+    "plu": 4095
+  },
+  {
+    "item": "Salad Bar Family",
+    "plu": 4688
+  },
+  {
+    "item": "Salad Bar Large",
+    "plu": 4689
+  },
+  {
+    "item": "Salad Bar Small",
+    "plu": 4428
+  },
+  {
+    "item": "Salad Savoy",
+    "plu": 4823
+  },
+  {
+    "item": "Scallion Organic",
+    "plu": 94068
+  },
+  {
+    "item": "Shallots",
+    "plu": 4662
+  },
+  {
+    "item": "Spinach Organic",
+    "plu": 94090
+  },
+  {
+    "item": "Squash Acorn",
+    "plu": 4750
+  },
+  {
+    "item": "Squash Buttercup",
+    "plu": 4758
+  },
+  {
+    "item": "Squash Butternut",
+    "plu": 4759
+  },
+  {
+    "item": "Squash Carnival",
+    "plu": 3142
+  },
+  {
+    "item": "Squash Chayote",
+    "plu": 4761
+  },
+  {
+    "item": "Squash Delicata",
+    "plu": 4763
+  },
+  {
+    "item": "Squash Golden Acorn",
+    "plu": 4751
+  },
+  {
+    "item": "Squash Green",
+    "plu": 4067
+  },
+  {
+    "item": "Squash Spaghetti",
+    "plu": 4776
+  },
+  {
+    "item": "Squash Sweet Dumpling",
+    "plu": 4764
+  },
+  {
+    "item": "Squash Turks Turban",
+    "plu": 4780
+  },
+  {
+    "item": "Squash White Acorn",
+    "plu": 4752
+  },
+  {
+    "item": "Squash Yellow",
+    "plu": 4086
+  },
+  {
+    "item": "Star Fruit",
+    "plu": 4256
+  },
+  {
+    "item": "String Roll",
+    "plu": 4510
+  },
+  {
+    "item": "Sweet Onions",
+    "plu": 4166
+  },
+  {
+    "item": "Tangelo",
+    "plu": 4383
+  },
+  {
+    "item": "Tangerines",
+    "plu": 4055
+  },
+  {
+    "item": "Tomatillo",
+    "plu": 4801
+  },
+  {
+    "item": "Tomato Hothouse",
+    "plu": 4799
+  },
+  {
+    "item": "Tomato Plum",
+    "plu": 4541
+  },
+  {
+    "item": "Tomato Ugly Ripe",
+    "plu": 3061
+  },
+  {
+    "item": "Tomato Vine Ripe",
+    "plu": 3151
+  },
+  {
+    "item": "Tomato Yellow Green",
+    "plu": 4778
+  },
+  {
+    "item": "Tomato on Vine",
+    "plu": 94539
+  },
+  {
+    "item": "Turnip Greens",
+    "plu": 4587
+  },
+  {
+    "item": "Turnip Purple Top",
+    "plu": 4811
+  },
+  {
+    "item": "Turnip White",
+    "plu": 4812
+  },
+  {
+    "item": "Turnip Yellow",
+    "plu": 4470
+  },
+  {
+    "item": "Uniq Fruit",
+    "plu": 4459
+  }
 ]
