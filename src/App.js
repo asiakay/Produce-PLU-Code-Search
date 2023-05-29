@@ -52,10 +52,10 @@ function App() {
   return (
     <div className="App">
       <main>
-      <h1>Produce PLU Code Search</h1>
+      <h1> PLU Code Search</h1>
 <section className='search-area' role="search">
 <div className='input-container'>
-  <label htmlFor='produce-search'>Search for produce item by name</label>
+  <label htmlFor='produce-search'>Search for item by name</label>
       <input
         type="text"
         id="produce-search"

@@ -1,4 +1,345 @@
+import json
+
+def sort_and_remove_duplicates(json_array):
+    unique_plu_dict = {}
+    
+    # Iterate through the JSON array
+    for item in json_array:
+        plu = item['plu']
+        
+        # Convert PLU to string for consistent comparison
+        plu = str(plu)
+        
+        # Check if the PLU is already present in the dictionary
+        if plu not in unique_plu_dict:
+            unique_plu_dict[plu] = item
+        else:
+            # If duplicate PLU is found, update the associated item value
+            unique_plu_dict[plu]['item'] = item['item']
+    
+    # Sort the unique PLUs
+    sorted_plu_list = sorted(unique_plu_dict.keys(), key=lambda x: int(x))
+    
+    # Create a new JSON array with sorted PLUs
+    sorted_array = [unique_plu_dict[plu] for plu in sorted_plu_list]
+    
+    return sorted_array
+
+# Example usage
+json_data = '''
 [
+  {
+    "item": "Onion Yellow",
+    "plu": 4665
+  },
+  {
+    "item": "Orange Fla Navel",
+    "plu": 4385
+  },
+  {
+    "item": "Orange Juice",
+    "plu": 4382
+  },
+  {
+    "item": "Orange Navel",
+    "plu": 4012
+  },
+  {
+    "item": "Orange Sour",
+    "plu": 3109
+  },
+  {
+    "item": "Organic Apple Pink Lady",
+    "plu": 94128
+  },
+  {
+    "item": "Organic Avocado",
+    "plu": 94225
+  },
+  {
+    "item": "Pepper Green",
+    "plu": 4065
+  },
+  {
+    "item": "Pepper Orange",
+    "plu": 3121
+  },
+  {
+    "item": "Pepper Poblano",
+    "plu": 4705
+  },
+  {
+    "item": "Pepper Red",
+    "plu": 4688
+  },
+  {
+    "item": "Pepper Red La Rouge",
+    "plu": 94587
+  },
+  {
+    "item": "Pepper Yellow",
+    "plu": 4689
+  },
+  {
+    "item": "Persimmon Fuyu",
+    "plu": 4428
+  },
+  {
+    "item": "Persimmon Hachiya",
+    "plu": 94090
+  },
+  {
+    "item": "Pie Pumpkin",
+    "plu": 3134
+  },
+  {
+    "item": "Pineapple Lg",
+    "plu": 4430
+  },
+  {
+    "item": "Plantains",
+    "plu": 4235
+  },
+  {
+    "item": "Plums Black",
+    "plu": 4437
+  },
+  {
+    "item": "Plums Green",
+    "plu": 4435
+  },
+  {
+    "item": "Plums Prune",
+    "plu": 4436
+  },
+  {
+    "item": "Plums Red",
+    "plu": 4042
+  },
+  {
+    "item": "Pomegranate",
+    "plu": 3127
+  },
+  {
+    "item": "Potato Red",
+    "plu": 4073
+  },
+  {
+    "item": "Potato Russet Loose",
+    "plu": 4072
+  },
+  {
+    "item": "Potato Sweet",
+    "plu": 4091
+  },
+  {
+    "item": "Potato White",
+    "plu": 4083
+  },
+  {
+    "item": "Potato Yellow",
+    "plu": 4727
+  },
+  {
+    "item": "Pumpkin Large",
+    "plu": 4736
+  },
+  {
+    "item": "Pumpkin Mini",
+    "plu": 4734
+  },
+  {
+    "item": "Pumpkin Pie",
+    "plu": 3134
+  },
+  {
+    "item": "Quenepas",
+    "plu": 4483
+  },
+  {
+    "item": "Quince",
+    "plu": 4447
+  },
+  {
+    "item": "Radicchio",
+    "plu": 4738
+  },
+  {
+    "item": "Radish Black",
+    "plu": 4739
+  },
+  {
+    "item": "Radish Breakfast",
+    "plu": 2178
+  },
+  {
+    "item": "Radish Daikon",
+    "plu": 4598
+  },
+  {
+    "item": "Radish Icicle",
+    "plu": 2179
+  },
+  {
+    "item": "Radish Organic",
+    "plu": 94089
+  },
+  {
+    "item": "Radish Red",
+    "plu": 4089
+  },
+  {
+    "item": "Rutabaga",
+    "plu": 4095
+  },
+  {
+    "item": "Salad Bar Family",
+    "plu": 4688
+  },
+  {
+    "item": "Salad Bar Large",
+    "plu": 4689
+  },
+  {
+    "item": "Salad Bar Small",
+    "plu": 4428
+  },
+  {
+    "item": "Salad Savoy",
+    "plu": 4823
+  },
+  {
+    "item": "Scallion Organic",
+    "plu": 94068
+  },
+  {
+    "item": "Shallots",
+    "plu": 4662
+  },
+  {
+    "item": "Spinach Organic",
+    "plu": 94090
+  },
+  {
+    "item": "Squash Acorn",
+    "plu": 4750
+  },
+  {
+    "item": "Squash Buttercup",
+    "plu": 4758
+  },
+  {
+    "item": "Squash Butternut",
+    "plu": 4759
+  },
+  {
+    "item": "Squash Carnival",
+    "plu": 3142
+  },
+  {
+    "item": "Squash Chayote",
+    "plu": 4761
+  },
+  {
+    "item": "Squash Delicata",
+    "plu": 4763
+  },
+  {
+    "item": "Squash Golden Acorn",
+    "plu": 4751
+  },
+  {
+    "item": "Squash Green",
+    "plu": 4067
+  },
+  {
+    "item": "Squash Spaghetti",
+    "plu": 4776
+  },
+  {
+    "item": "Squash Sweet Dumpling",
+    "plu": 4764
+  },
+  {
+    "item": "Squash Turks Turban",
+    "plu": 4780
+  },
+  {
+    "item": "Squash White Acorn",
+    "plu": 4752
+  },
+  {
+    "item": "Squash Yellow",
+    "plu": 4086
+  },
+  {
+    "item": "Star Fruit",
+    "plu": 4256
+  },
+  {
+    "item": "String Roll",
+    "plu": 4510
+  },
+  {
+    "item": "Sweet Onions",
+    "plu": 4166
+  },
+  {
+    "item": "Tangelo",
+    "plu": 4383
+  },
+  {
+    "item": "Tangerines",
+    "plu": 4055
+  },
+  {
+    "item": "Tomatillo",
+    "plu": 4801
+  },
+  {
+    "item": "Tomato Hothouse",
+    "plu": 4799
+  },
+  {
+    "item": "Tomato Plum",
+    "plu": 4541
+  },
+  {
+    "item": "Tomato Ugly Ripe",
+    "plu": 3061
+  },
+  {
+    "item": "Tomato Vine Ripe",
+    "plu": 3151
+  },
+  {
+    "item": "Tomato Yellow Green",
+    "plu": 4778
+  },
+  {
+    "item": "Tomato on Vine",
+    "plu": 94539
+  },
+  {
+    "item": "Turnip Greens",
+    "plu": 4587
+  },
+  {
+    "item": "Turnip Purple Top",
+    "plu": 4811
+  },
+  {
+    "item": "Turnip White",
+    "plu": 4812
+  },
+  {
+    "item": "Turnip Yellow",
+    "plu": 4470
+  },
+  {
+    "item": "Uniq Fruit",
+    "plu": 4459
+  },
   {
     "item": "Aloe Leaves",
     "plu": 3064
@@ -139,13 +480,342 @@
     "item": "Baby Watermelon",
     "plu": 3421
   },
+  { "item": "banana", "plu": "4011" },
+  { "item": "broccoli", "plu": "4567" },
+  { "item": "cilantro", "plu": "4889" },
+  { "item": "yellow onion", "plu": "4665" },
+  { "item": "Avocado", "plu": "4225" },
+  { "item": "Onion Shallots", "plu": "4662" },
+  { "item": "Onions Sweet", "plu": "4166" },
+  { "item": "Onion Vidalia", "plu": "4159" },
+  { "item": "Onion White", "plu": "4663" },
+  { "item": "Onion White Pearl", "plu": "4660" },
+  { "item": "Onion Yellow", "plu": "4665" },
+  { "item": "Orange Fla Navel", "plu": "4385" },
+  { "item": "Orange Juice", "plu": "4382" },
+  { "item": "Orange Navel", "plu": "4012" },
+  { "item": "Orange Sour", "plu": "3109" },
+  { "item": "Organic Apple Pink Lady", "plu": "94128" },
+  { "item": "Organic Avocado", "plu": "94225" },
+  { "item": "Organic Beets", "plu": "94539" },
+  { "item": "Organic Boston Lett", "plu": "94632" },
+  { "item": "Organic Braeburn App", "plu": "94103" },
+  { "item": "Organic Broccoli", "plu": "94567" },
+  { "item": "Organic Bunched Radish", "plu": "94089" },
+  { "item": "Organic Carrots Bunch", "plu": "94094" },
+  { "item": "Organic Cauliflower", "plu": "94079" },
+  { "item": "Organic Collard", "plu": "94614" },
   {
-    "item": "Bagel / Cream Cheese",
-    "plu": 424
+    "item": "Onion Yellow",
+    "plu": 4665
   },
   {
-    "item": "Bagels Each",
-    "plu": 1655
+    "item": "Orange Fla Navel",
+    "plu": 4385
+  },
+  {
+    "item": "Orange Juice",
+    "plu": 4382
+  },
+  {
+    "item": "Orange Navel",
+    "plu": 4012
+  },
+  {
+    "item": "Orange Sour",
+    "plu": 3109
+  },
+  {
+    "item": "Organic Apple Pink Lady",
+    "plu": 94128
+  },
+  {
+    "item": "Organic Avocado",
+    "plu": 94225
+  },
+  {
+    "item": "Pepper Green",
+    "plu": 4065
+  },
+  {
+    "item": "Pepper Orange",
+    "plu": 3121
+  },
+  {
+    "item": "Pepper Poblano",
+    "plu": 4705
+  },
+  {
+    "item": "Pepper Red",
+    "plu": 4688
+  },
+  {
+    "item": "Pepper Red La Rouge",
+    "plu": 94587
+  },
+  {
+    "item": "Pepper Yellow",
+    "plu": 4689
+  },
+  {
+    "item": "Persimmon Fuyu",
+    "plu": 4428
+  },
+  {
+    "item": "Persimmon Hachiya",
+    "plu": 94090
+  },
+  {
+    "item": "Pie Pumpkin",
+    "plu": 3134
+  },
+  {
+    "item": "Pineapple Lg",
+    "plu": 4430
+  },
+  {
+    "item": "Plantains",
+    "plu": 4235
+  },
+  {
+    "item": "Plums Black",
+    "plu": 4437
+  },
+  {
+    "item": "Plums Green",
+    "plu": 4435
+  },
+  {
+    "item": "Plums Prune",
+    "plu": 4436
+  },
+  {
+    "item": "Plums Red",
+    "plu": 4042
+  },
+  {
+    "item": "Pomegranate",
+    "plu": 3127
+  },
+  {
+    "item": "Potato Red",
+    "plu": 4073
+  },
+  {
+    "item": "Potato Russet Loose",
+    "plu": 4072
+  },
+  {
+    "item": "Potato Sweet",
+    "plu": 4091
+  },
+  {
+    "item": "Potato White",
+    "plu": 4083
+  },
+  {
+    "item": "Potato Yellow",
+    "plu": 4727
+  },
+  {
+    "item": "Pumpkin Large",
+    "plu": 4736
+  },
+  {
+    "item": "Pumpkin Mini",
+    "plu": 4734
+  },
+  {
+    "item": "Pumpkin Pie",
+    "plu": 3134
+  },
+  {
+    "item": "Quenepas",
+    "plu": 4483
+  },
+  {
+    "item": "Quince",
+    "plu": 4447
+  },
+  {
+    "item": "Radicchio",
+    "plu": 4738
+  },
+  {
+    "item": "Radish Black",
+    "plu": 4739
+  },
+  {
+    "item": "Radish Breakfast",
+    "plu": 2178
+  },
+  {
+    "item": "Radish Daikon",
+    "plu": 4598
+  },
+  {
+    "item": "Radish Icicle",
+    "plu": 2179
+  },
+  {
+    "item": "Radish Organic",
+    "plu": 94089
+  },
+  {
+    "item": "Radish Red",
+    "plu": 4089
+  },
+  {
+    "item": "Rutabaga",
+    "plu": 4095
+  },
+  {
+    "item": "Salad Bar Family",
+    "plu": 4688
+  },
+  {
+    "item": "Salad Bar Large",
+    "plu": 4689
+  },
+  {
+    "item": "Salad Bar Small",
+    "plu": 4428
+  },
+  {
+    "item": "Salad Savoy",
+    "plu": 4823
+  },
+  {
+    "item": "Scallion Organic",
+    "plu": 94068
+  },
+  {
+    "item": "Shallots",
+    "plu": 4662
+  },
+  {
+    "item": "Spinach Organic",
+    "plu": 94090
+  },
+  {
+    "item": "Squash Acorn",
+    "plu": 4750
+  },
+  {
+    "item": "Squash Buttercup",
+    "plu": 4758
+  },
+  {
+    "item": "Squash Butternut",
+    "plu": 4759
+  },
+  {
+    "item": "Squash Carnival",
+    "plu": 3142
+  },
+  {
+    "item": "Squash Chayote",
+    "plu": 4761
+  },
+  {
+    "item": "Squash Delicata",
+    "plu": 4763
+  },
+  {
+    "item": "Squash Golden Acorn",
+    "plu": 4751
+  },
+  {
+    "item": "Squash Green",
+    "plu": 4067
+  },
+  {
+    "item": "Squash Spaghetti",
+    "plu": 4776
+  },
+  {
+    "item": "Squash Sweet Dumpling",
+    "plu": 4764
+  },
+  {
+    "item": "Squash Turks Turban",
+    "plu": 4780
+  },
+  {
+    "item": "Squash White Acorn",
+    "plu": 4752
+  },
+  {
+    "item": "Squash Yellow",
+    "plu": 4086
+  },
+  {
+    "item": "Star Fruit",
+    "plu": 4256
+  },
+  {
+    "item": "String Roll",
+    "plu": 4510
+  },
+  {
+    "item": "Sweet Onions",
+    "plu": 4166
+  },
+  {
+    "item": "Tangelo",
+    "plu": 4383
+  },
+  {
+    "item": "Tangerines",
+    "plu": 4055
+  },
+  {
+    "item": "Tomatillo",
+    "plu": 4801
+  },
+  {
+    "item": "Tomato Hothouse",
+    "plu": 4799
+  },
+  {
+    "item": "Tomato Plum",
+    "plu": 4541
+  },
+  {
+    "item": "Tomato Ugly Ripe",
+    "plu": 3061
+  },
+  {
+    "item": "Tomato Vine Ripe",
+    "plu": 3151
+  },
+  {
+    "item": "Tomato Yellow Green",
+    "plu": 4778
+  },
+  {
+    "item": "Tomato on Vine",
+    "plu": 94539
+  },
+  {
+    "item": "Turnip Greens",
+    "plu": 4587
+  },
+  {
+    "item": "Turnip Purple Top",
+    "plu": 4811
+  },
+  {
+    "item": "Turnip White",
+    "plu": 4812
+  },
+  {
+    "item": "Turnip Yellow",
+    "plu": 4470
+  },
+  {
+    "item": "Uniq Fruit",
+    "plu": 4459
   },
   {
     "item": "Banana",
@@ -178,10 +848,6 @@
   {
     "item": "Beets Bunch",
     "plu": 4539
-  },
-  {
-    "item": "Belgian Endive",
-    "plu": 4543
   },
   {
     "item": "Black Radish",
@@ -288,6 +954,14 @@
     "plu": 94079
   },
   {
+    "item": "Plantain",
+    "plu": 4235
+  },
+  {
+    "item": "Belgian Endive",
+    "plu": 4543
+  },
+  {
     "item": "Celery",
     "plu": 4071
   },
@@ -340,16 +1014,12 @@
     "plu": 94614
   },
   {
-    "item": "Condiment Cup",
-    "plu": 437
+    "item": "Com White",
+    "plu": 4077
   },
   {
     "item": "Corn All",
     "plu": 4078
-  },
-  {
-    "item": "Corn White",
-    "plu": 4077
   },
   {
     "item": "Cucumber",
@@ -372,10 +1042,6 @@
     "plu": 4598
   },
   {
-    "item": "Danish/Pastry",
-    "plu": 625
-  },
-  {
     "item": "Dasheen",
     "plu": 4795
   },
@@ -390,10 +1056,6 @@
   {
     "item": "Donut Peach",
     "plu": 3113
-  },
-  {
-    "item": "Donuts Each",
-    "plu": 620
   },
   {
     "item": "Dragon Fruit",
@@ -508,10 +1170,6 @@
     "plu": 4625
   },
   {
-    "item": "Hot Bar",
-    "plu": 775
-  },
-  {
     "item": "Icicle Radish",
     "plu": 2179
   },
@@ -564,10 +1222,6 @@
     "plu": 94053
   },
   {
-    "item": "Lettuce Boston",
-    "plu": 4632
-  },
-  {
     "item": "Lettuce Frise",
     "plu": 3167
   },
@@ -588,6 +1242,14 @@
     "plu": 4075
   },
   {
+    "item": "Lettuce lceburg",
+    "plu": 4061
+  },
+  {
+    "item": "Lettuce Boston",
+    "plu": 4632
+  },
+  {
     "item": "Lettuce Red Leaf Organic",
     "plu": 94075
   },
@@ -598,10 +1260,6 @@
   {
     "item": "Lettuce Romaine Organic",
     "plu": 94640
-  },
-  {
-    "item": "Lettuce lceburg",
-    "plu": 4061
   },
   {
     "item": "Limes",
@@ -668,10 +1326,6 @@
     "plu": 4896
   },
   {
-    "item": "Muffin Each",
-    "plu": 402
-  },
-  {
     "item": "Mushroom Cremini",
     "plu": 4648
   },
@@ -720,10 +1374,6 @@
     "plu": 4655
   },
   {
-    "item": "Olive Bar",
-    "plu": 727
-  },
-  {
     "item": "Onion Boiling",
     "plu": 4658
   },
@@ -764,22 +1414,10 @@
     "plu": 4665
   },
   {
-    "item": "Onion Yellow",
-    "plu": 4665
-  },
-  {
     "item": "Onions Sweet",
     "plu": 4166
   },
   {
-    "item": "Orange Fla Navel",
-    "plu": 4385
-  },
-  {
-    "item": "Orange Juice",
-    "plu": 4382
-  },
-  {
     "item": "Orange Juice",
     "plu": 4382
   },
@@ -788,28 +1426,12 @@
     "plu": 4012
   },
   {
-    "item": "Orange Navel",
-    "plu": 4012
-  },
-  {
     "item": "Orange Sour",
     "plu": 3109
-  },
-  {
-    "item": "Orange Sour",
-    "plu": 3109
-  },
-  {
-    "item": "Organic Apple Pink Lady",
-    "plu": 9
   },
   {
     "item": "Organic Apple Pink Lady",
     "plu": 94128
-  },
-  {
-    "item": "Organic Avocado",
-    "plu": 94225
   },
   {
     "item": "Organic Avocado",
@@ -916,7 +1538,7 @@
     "plu": 94900
   },
   {
-    "item": "Organic Portobella Mushroom",
+    "item": "Organic Port Mushroom",
     "plu": 94650
   },
   {
@@ -1056,10 +1678,6 @@
     "plu": 4065
   },
   {
-    "item": "Pepper Green",
-    "plu": 4065
-  },
-  {
     "item": "Pepper Habanero",
     "plu": 3125
   },
@@ -1072,28 +1690,12 @@
     "plu": 3121
   },
   {
-    "item": "Pepper Orange",
-    "plu": 3121
-  },
-  {
     "item": "Pepper Pablano",
     "plu": 4705
   },
   {
-    "item": "Pepper Poblano",
-    "plu": 4705
-  },
-  {
     "item": "Pepper Red",
     "plu": 4688
-  },
-  {
-    "item": "Pepper Red",
-    "plu": 4688
-  },
-  {
-    "item": "Pepper Red La Rouge",
-    "plu": 94587
   },
   {
     "item": "Pepper Red LaRouge",
@@ -1104,20 +1706,8 @@
     "plu": 4689
   },
   {
-    "item": "Pepper Yellow",
-    "plu": 4689
-  },
-  {
     "item": "Persimmon Fuyu",
     "plu": 4428
-  },
-  {
-    "item": "Persimmon Fuyu",
-    "plu": 4428
-  },
-  {
-    "item": "Persimmon Hachiya",
-    "plu": 94090
   },
   {
     "item": "Persimmon Hachiya",
@@ -1128,24 +1718,8 @@
     "plu": 3134
   },
   {
-    "item": "Pie Pumpkin",
-    "plu": 3134
-  },
-  {
     "item": "Pineapple Lg",
     "plu": 4430
-  },
-  {
-    "item": "Pineapple Lg",
-    "plu": 4430
-  },
-  {
-    "item": "Plantain",
-    "plu": 4235
-  },
-  {
-    "item": "Plantains",
-    "plu": 4235
   },
   {
     "item": "Plantains",
@@ -1156,20 +1730,8 @@
     "plu": 4437
   },
   {
-    "item": "Plums Black",
-    "plu": 4437
-  },
-  {
     "item": "Plums Green",
     "plu": 4435
-  },
-  {
-    "item": "Plums Green",
-    "plu": 4435
-  },
-  {
-    "item": "Plums Prune",
-    "plu": 4436
   },
   {
     "item": "Plums Prune",
@@ -1180,20 +1742,8 @@
     "plu": 4042
   },
   {
-    "item": "Plums Red",
-    "plu": 4042
-  },
-  {
     "item": "Pomegranate",
     "plu": 3127
-  },
-  {
-    "item": "Pomegranate",
-    "plu": 3127
-  },
-  {
-    "item": "Potato Red",
-    "plu": 4073
   },
   {
     "item": "Potato Red",
@@ -1204,28 +1754,12 @@
     "plu": 4072
   },
   {
-    "item": "Potato Russet Loose",
-    "plu": 4072
-  },
-  {
-    "item": "Potato Sweet",
-    "plu": 4091
-  },
-  {
     "item": "Potato Sweet",
     "plu": 4091
   },
   {
     "item": "Potato White",
     "plu": 4083
-  },
-  {
-    "item": "Potato White",
-    "plu": 4083
-  },
-  {
-    "item": "Potato Yellow",
-    "plu": 4727
   },
   {
     "item": "Potato Yellow",
@@ -1240,20 +1774,8 @@
     "plu": 4736
   },
   {
-    "item": "Pumpkin Large",
-    "plu": 4736
-  },
-  {
     "item": "Pumpkin Mini",
     "plu": 4734
-  },
-  {
-    "item": "Pumpkin Mini",
-    "plu": 4734
-  },
-  {
-    "item": "Pumpkin Pie",
-    "plu": 3134
   },
   {
     "item": "Pumpkin Pie",
@@ -1264,20 +1786,8 @@
     "plu": 4483
   },
   {
-    "item": "Quenepas",
-    "plu": 4483
-  },
-  {
     "item": "Quince",
     "plu": 4447
-  },
-  {
-    "item": "Quince",
-    "plu": 4447
-  },
-  {
-    "item": "Radicchio",
-    "plu": 4738
   },
   {
     "item": "Radiccho",
@@ -1288,20 +1798,8 @@
     "plu": 4739
   },
   {
-    "item": "Radish Black",
-    "plu": 4739
-  },
-  {
     "item": "Radish Breakfast",
     "plu": 2178
-  },
-  {
-    "item": "Radish Breakfast",
-    "plu": 2178
-  },
-  {
-    "item": "Radish Daikon",
-    "plu": 4598
   },
   {
     "item": "Radish Daikon",
@@ -1312,20 +1810,8 @@
     "plu": 2179
   },
   {
-    "item": "Radish Icicle",
-    "plu": 2179
-  },
-  {
     "item": "Radish Organic",
     "plu": 94089
-  },
-  {
-    "item": "Radish Organic",
-    "plu": 94089
-  },
-  {
-    "item": "Radish Red",
-    "plu": 4089
   },
   {
     "item": "Radish Red",
@@ -1352,20 +1838,8 @@
     "plu": 4745
   },
   {
-    "item": "Rolls Each",
-    "plu": 426
-  },
-  {
     "item": "Rutabaga",
     "plu": 4095
-  },
-  {
-    "item": "Rutabaga",
-    "plu": 4095
-  },
-  {
-    "item": "Salad Bar Family",
-    "plu": 4688
   },
   {
     "item": "Salad Bar Family",
@@ -1373,15 +1847,7 @@
   },
   {
     "item": "Salad Bar Large",
-    "plu": 4689
-  },
-  {
-    "item": "Salad Bar Large",
     "plu": 4470
-  },
-  {
-    "item": "Salad Bar Small",
-    "plu": 4428
   },
   {
     "item": "Salad Bar Small",
@@ -1392,20 +1858,8 @@
     "plu": 4823
   },
   {
-    "item": "Salad Savoy",
-    "plu": 4823
-  },
-  {
     "item": "Scallion Organic",
     "plu": 94068
-  },
-  {
-    "item": "Scallion Organic",
-    "plu": 94068
-  },
-  {
-    "item": "Shallots",
-    "plu": 4662
   },
   {
     "item": "Shallots",
@@ -1416,20 +1870,8 @@
     "plu": 94090
   },
   {
-    "item": "Spinach Organic",
-    "plu": 94090
-  },
-  {
     "item": "Squash Acorn",
     "plu": 4750
-  },
-  {
-    "item": "Squash Acorn",
-    "plu": 4750
-  },
-  {
-    "item": "Squash Buttercup",
-    "plu": 4758
   },
   {
     "item": "Squash Buttercup",
@@ -1440,20 +1882,8 @@
     "plu": 4759
   },
   {
-    "item": "Squash Butternut",
-    "plu": 4759
-  },
-  {
     "item": "Squash Carnival",
     "plu": 3142
-  },
-  {
-    "item": "Squash Carnival",
-    "plu": 3142
-  },
-  {
-    "item": "Squash Chayote",
-    "plu": 4761
   },
   {
     "item": "Squash Chayote",
@@ -1464,20 +1894,8 @@
     "plu": 4763
   },
   {
-    "item": "Squash Delicata",
-    "plu": 4763
-  },
-  {
     "item": "Squash Golden Acorn",
     "plu": 4751
-  },
-  {
-    "item": "Squash Golden Acorn",
-    "plu": 4751
-  },
-  {
-    "item": "Squash Green",
-    "plu": 4067
   },
   {
     "item": "Squash Green",
@@ -1488,20 +1906,8 @@
     "plu": 4776
   },
   {
-    "item": "Squash Spaghetti",
-    "plu": 4776
-  },
-  {
     "item": "Squash Sweet Dumpling",
     "plu": 4764
-  },
-  {
-    "item": "Squash Sweet Dumpling",
-    "plu": 4764
-  },
-  {
-    "item": "Squash Turks Turban",
-    "plu": 4780
   },
   {
     "item": "Squash Turks Turban",
@@ -1512,28 +1918,12 @@
     "plu": 4752
   },
   {
-    "item": "Squash White Acorn",
-    "plu": 4752
-  },
-  {
-    "item": "Squash Yellow",
-    "plu": 4086
-  },
-  {
     "item": "Squash Yellow",
     "plu": 4086
   },
   {
     "item": "Star Fruit",
     "plu": 4256
-  },
-  {
-    "item": "Star Fruit",
-    "plu": 4256
-  },
-  {
-    "item": "String Roll",
-    "plu": 4510
   },
   {
     "item": "String Roll",
@@ -1548,28 +1938,12 @@
     "plu": 4166
   },
   {
-    "item": "Sweet Onions",
-    "plu": 4166
-  },
-  {
-    "item": "Tangelo",
-    "plu": 4383
-  },
-  {
     "item": "Tangelo",
     "plu": 4383
   },
   {
     "item": "Tangerines",
     "plu": 4055
-  },
-  {
-    "item": "Tangerines",
-    "plu": 4055
-  },
-  {
-    "item": "Tomatillo",
-    "plu": 4801
   },
   {
     "item": "Tomatillo",
@@ -1580,28 +1954,8 @@
     "plu": 4799
   },
   {
-    "item": "Tomato Hothouse",
-    "plu": 4799
-  },
-  {
-    "item": "Tomato Plum",
-    "plu": 4541
-  },
-  {
-    "item": "Tomato Plum",
-    "plu": 4087
-  },
-  {
     "item": "Tomato Ugly Ripe",
     "plu": 3061
-  },
-  {
-    "item": "Tomato Ugly Ripe",
-    "plu": 3061
-  },
-  {
-    "item": "Tomato Vine Ripe",
-    "plu": 3151
   },
   {
     "item": "Tomato VineRipe",
@@ -1612,20 +1966,48 @@
     "plu": 4778
   },
   {
-    "item": "Tomato Yellow Green",
-    "plu": 4778
-  },
-  {
-    "item": "Tomato on Vine",
-    "plu": 94539
-  },
-  {
     "item": "Tomato on Vine",
     "plu": 4664
   },
   {
-    "item": "Turnip Greens",
-    "plu": 4587
+    "item": "Bagel / Cream Cheese",
+    "plu": 424
+  },
+  {
+    "item": "Bagels Each",
+    "plu": 1655
+  },
+  {
+    "item": "Condiment Cup",
+    "plu": 437
+  },
+  {
+    "item": "Danish/Pastry",
+    "plu": 625
+  },
+  {
+    "item": "Donuts Each",
+    "plu": 620
+  },
+  {
+    "item": "Hot Bar",
+    "plu": 775
+  },
+  {
+    "item": "Muffin Each",
+    "plu": 402
+  },
+  {
+    "item": "Olive Bar",
+    "plu": 727
+  },
+  {
+    "item": "Rolls Each",
+    "plu": 426
+  },
+  {
+    "item": "Tomato Plum",
+    "plu": 4087
   },
   {
     "item": "Turnip Greens",
@@ -1636,28 +2018,12 @@
     "plu": 4811
   },
   {
-    "item": "Turnip Purple Top",
-    "plu": 4811
-  },
-  {
     "item": "Turnip White",
     "plu": 4812
-  },
-  {
-    "item": "Turnip White",
-    "plu": 4812
-  },
-  {
-    "item": "Turnip Yellow",
-    "plu": 4470
   },
   {
     "item": "Turnip Yellow",
     "plu": 4095
-  },
-  {
-    "item": "Uniq Fruit",
-    "plu": 4459
   },
   {
     "item": "Uniq Fruit",
@@ -1704,3 +2070,14 @@
     "plu": 4819
   }
 ]
+
+'''
+
+# Parse the JSON data
+data = json.loads(json_data)
+
+# Sort and remove duplicates
+sorted_data = sort_and_remove_duplicates(data)
+
+# Print the sorted JSON array without duplicates
+print(json.dumps(sorted_data, indent=2))
