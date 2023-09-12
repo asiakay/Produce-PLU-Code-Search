@@ -2,7 +2,7 @@
 
 A React app to search and display the PLU code for grocery produce items, with autosuggest and accessibility features.
 
-![App Screenshot](./screenshot.png)
+![App Screenshot](https://github.com/asiakay/Produce-PLU-Code-Search/blob/main/IMG_5514DE666BB8-1.jpeg?raw=true))
 
 ## Features
 
